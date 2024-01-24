@@ -11,6 +11,7 @@ function New () {
             type="text"
             name="name"
             id="name"
+            required
           />
           <label htmlFor="image">Image</label>
           <input
