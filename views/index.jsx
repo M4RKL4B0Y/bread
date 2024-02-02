@@ -1,6 +1,8 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
+// const { BarLoader } = require('react-spinners');
+
 function Index ( {breads} ) {
     return (
         <Default>
@@ -9,11 +11,11 @@ function Index ( {breads} ) {
         {/* <p>I have {breads[0].name} bread!</p> */}
         
         <ul>
-          {
+        {
             breads.map((bread, index)=> {
               return (
               <li key={index}>
-               <a href={`/breads/${index}`}>
+               <a href={`/breads/${bread.id}`}>
                 {bread.name}
                </a> 
               </li>
@@ -33,3 +35,20 @@ function Index ( {breads} ) {
 }
 
 module.exports = Index
+
+
+// {Array.isArray(breads) ? (
+//         <ul>
+//           {breads.map((bread, index) => (
+//             <li key={index}>
+//               <a href={`/breads/${index}`}>{bread.name}</a>
+//             </li>
+//           ))}
+//         </ul>
+//       ) : (
+//         <div className="loading-container">
+//           <p>Loading...</p>
+//           <BarLoader css={override} color={'#36D7B7'} />
+//         </div>
+//       )}
+        
