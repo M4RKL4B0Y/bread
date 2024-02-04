@@ -10,6 +10,15 @@ baker.get('/data/seed', (req, res) => {
         .then(res.redirect('/breads'))
 })
 
+//Index
+baker.get('/', (req, res) => {
+    Baker.find()
+        .populate('breads')
+        .then(foundBakers => {
+            res.send(foundBakers)
+        })
+})
+
 
 // export
 module.exports = baker                    
