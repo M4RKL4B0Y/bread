@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const methodOverride = require('method-override')
 const express = require('express')
-
+const mongoose = require('mongoose')
 
 // CONFIGURATION
 require('dotenv').config()
@@ -29,6 +29,8 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
   res.send('404')
 })
+
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => console.log('connected to mongo: ', process.env.MONGO_URI))
 
 // LISTEN
 app.listen(PORT, () => {
