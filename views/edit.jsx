@@ -7,6 +7,7 @@ function Edit ({bread, index}) {
       <h2>Edit a bread</h2>
       <form action={`/breads/${bread.id}?_method=PUT`} method="POST">
         <label htmlFor="name">Name</label>
+        
         <input
           type="text"
           name="name"
@@ -14,6 +15,7 @@ function Edit ({bread, index}) {
           required
           defaultValue={bread.name}
         />
+
         <label htmlFor="image">Image</label>
         <input
           type="text"
@@ -21,6 +23,7 @@ function Edit ({bread, index}) {
           id="image"
           defaultValue={bread.image}
         />
+
         <label htmlFor="hasGluten">Has Gluten?</label>
         <input
           type="checkbox"
@@ -28,6 +31,17 @@ function Edit ({bread, index}) {
           id="hasGluten"
           defaultChecked={bread.hasGluten}
         />
+
+        <label htmlFor="baker">Baker</label>
+        <select name="baker" id="baker" defaultValue={bread.baker}>
+          <option value="Rachel">Rachel</option>
+          <option value="Monica">Monica</option>
+          <option value="Joey">Joey</option>
+          <option value="Chandler">Chandler</option>
+          <option value="Ross">Ross</option>
+          <option value="Phoebe">Phoebe</option>
+        </select>
+
         <br />
         <input type="submit"/>
       </form>
