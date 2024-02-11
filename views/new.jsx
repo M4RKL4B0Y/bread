@@ -23,28 +23,30 @@ function New ({bakers}) {
             id="image"
           />
 
+          <label htmlFor="hasGluten">Has Gluten?</label>
+                    <input
+                      type="checkbox"
+                      name="hasGluten"
+                      id="hasGluten"
+                      defaultChecked
+                    />
+                    
            <label htmlFor="baker">Baker</label>
               <select name="baker" id="baker">
-                {bakers.map ((baker) => {
+                {/* {bakers.map ((baker) => {
                   return(
                     <option value={baker.id} key={baker.id}>{baker.name}</option>
                   )
-                })}
-                {/* <option value="Rachel">Rachel</option>
+                })} */}
+                <option value="Rachel">Rachel</option>
                 <option value="Monica">Monica</option>
                 <option value="Joey">Joey</option>
                 <option value="Chandler">Chandler</option>
                 <option value="Ross">Ross</option>
-                <option value="Phoebe">Phoebe</option> */}
+                <option value="Phoebe">Phoebe</option>
               </select>
  
-          <label htmlFor="hasGluten">Has Gluten?</label>
-          <input
-            type="checkbox"
-            name="hasGluten"
-            id="hasGluten"
-            defaultChecked
-          />
+         
 
           <br />
 
