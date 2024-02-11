@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('./layouts/default')
 
-function Show ({bread, index}) {
+function Show ({bread, bakedBy}) {
     // Confirm we are getting our bread data in the terminal.
   //console.log(bread.name)
     return (
@@ -22,7 +22,7 @@ function Show ({bread, index}) {
 
         <li><a href="/breads">Go home</a></li>
 
-           <p>{bread.getBakedBy()}</p>
+           {/* <p>{bread.getBakedBy()}</p> */}
 
         <a href={`/breads/${bread.id}/edit`}><button>Edit</button></a>
 

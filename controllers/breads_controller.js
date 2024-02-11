@@ -7,6 +7,8 @@ const Baker = require('../models/baker.js')
 breads.get('/', (req, res) => {
   Bread.find()
     .then(foundBreads => {
+      // console.log(foundBreads)
+    
       res.render('index', {
         breads: foundBreads, // Pass foundBreads, not Bread
         title: 'Index Page'
@@ -53,8 +55,8 @@ breads.get('/:id', (req, res) => {
   Bread.findById(req.params.id)
       .populate('baker')
       .then(foundBread => {
-        const bakedBy = foundBread.getBakedBy()
-        console.log(bakedBy)
+        // const bakedBy = foundBread.getBakedBy()
+        // console.log(bakedBy)
           res.render('show', {
               bread: foundBread
           })
